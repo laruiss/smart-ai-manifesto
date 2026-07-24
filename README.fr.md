@@ -6,10 +6,11 @@ Nous considérons qu'un développeur est responsable de chaque ligne de code qu'
 
 Avant toute soumission, un code doit être :
 
-- **relu** : ne jamais supposer que le modèle a raison ;
-- **compris** : être capable d'expliquer chaque choix important ;
-- **testé** : vérifier que le comportement est correct, pas seulement que les tests passent ;
-- **simplifié** : supprimer tout ce qui est inutile ou surconçu.
+- **relu** : vous ne supposez jamais que le modèle a raison ;
+- **compris** : vous êtes capable d'expliquer chaque partie du code produit ;
+- **testé** : vous vérifiez que le comportement est correct, pas seulement que les tests passent ;
+- **Nettoyé** : vous supprimez tout ce qui est inutile ou surconçu.
+- **Clarifié** : vous assumer la lisibilité du code par un humain.
 
 *Une review de code n'a pas pour vocation de découvrir ce que l'auteur n'a pas pris le temps de vérifier.*
 

@@ -7,9 +7,10 @@ We believe developers are accountable for every line of code they submit, whethe
 Before any submission, code should be:
 
 - **reviewed**: you never assume the model is correct;
-- **understood**: you can explain every meaningful decision;
+- **understood**: you can explain every part of code;
 - **tested**: you validate behavior, not just green test runs;
-- **simplified**: you remove anything unnecessary or overengineered.
+- **Cleaned**: you remove anything unnecessary or over-engineered;
+- **Clarified**: you ensure the code is readable by a human.
 
 *Code review is not there to catch what the author did not bother to verify.*
 

@@ -4,10 +4,10 @@ L'IA est un accélérateur, pas un remplaçant de la réflexion.
 
 Nous considérons qu'un développeur est responsable de chaque ligne de code qu'il soumet, qu'elle ait été écrite par lui ou générée par un LLM.
 
-Avant toute Pull Request, le code doit être :
+Avant toute soumission, un code doit être :
 
-- **compris** : être capable d'expliquer chaque choix important ;
 - **relu** : ne jamais supposer que le modèle a raison ;
+- **compris** : être capable d'expliquer chaque choix important ;
 - **testé** : vérifier que le comportement est correct, pas seulement que les tests passent ;
 - **simplifié** : supprimer tout ce qui est inutile ou surconçu.
 

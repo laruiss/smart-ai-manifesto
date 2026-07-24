@@ -4,10 +4,10 @@ AI is an accelerator, not a replacement for clear thinking.
 
 We believe developers are accountable for every line of code they submit, whether they wrote it themselves or it came from an LLM.
 
-Before opening any pull request, your code should be:
+Before any submission, code should be:
 
-- **understood**: you can explain every meaningful decision;
 - **reviewed**: you never assume the model is correct;
+- **understood**: you can explain every meaningful decision;
 - **tested**: you validate behavior, not just green test runs;
 - **simplified**: you remove anything unnecessary or overengineered.
 

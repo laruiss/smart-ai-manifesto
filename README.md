@@ -1,6 +1,12 @@
 # For Using AI Wisely
 
-## Manifesto
+## Why This Manifesto?
+
+Every day, artificial intelligence is opening new ways to build software. Its potential is enormous, but it does not remove the need to understand the code we write or to take responsibility for it.
+
+With this manifesto, we affirm that a developer's value is not measured by the amount of code they produce, but by their ability to understand it, question it, and stand behind it. AI is a powerful lever, but it must never become a substitute for human judgment.
+
+## The Manifesto
 
 We are discovering a new way to build software with language models.
 
@@ -107,4 +113,3 @@ The goal is not to be anti-AI, but to promote responsible AI-assisted software e
 This work is licensed under the terms of the Creative Commons Attribution 4.0 International License (CC BY 4.0).
 
 https://creativecommons.org/licenses/by/4.0/
-

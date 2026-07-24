@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Branch"
+  short_description: "Create branches from GitHub issues"
+  default_prompt: "Use $create-branch with a GitHub issue ID to create a local branch from that issue."

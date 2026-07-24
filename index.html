@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manifeste pour une utilisation intelligente de l'IA</title>
+    <meta
+      name="description"
+      content="Manifeste pour une utilisation intelligente de l'IA."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <div class="language-switcher">
+        <button id="lang-toggle" type="button" aria-live="polite">
+          See in English
+        </button>
+      </div>
+
+      <article class="markdown-preview" id="content-fr" lang="fr">
+        <h1>Manifeste pour une utilisation intelligente de l'IA</h1>
+
+        <p>L'IA est un accélérateur, pas un remplaçant de la réflexion.</p>
+
+        <p>
+          Nous considérons qu'un développeur est responsable de chaque ligne de
+          code qu'il soumet, qu'elle ait été écrite par lui ou générée par un
+          LLM.
+        </p>
+
+        <p>Avant toute Pull Request, le code doit être :</p>
+
+        <ul>
+          <li><strong>compris</strong> : être capable d'expliquer chaque choix important ;</li>
+          <li><strong>relu</strong> : ne jamais supposer que le modèle a raison ;</li>
+          <li><strong>testé</strong> : vérifier que le comportement est correct, pas seulement que les tests passent ;</li>
+          <li><strong>simplifié</strong> : supprimer tout ce qui est inutile ou surconçu.</li>
+        </ul>
+
+        <p>
+          <em>
+            Une review de code n'a pas pour vocation de découvrir ce que
+            l'auteur n'a pas pris le temps de vérifier.
+          </em>
+        </p>
+
+        <p>
+          L'IA nous fait gagner du temps. Ce temps doit être réinvesti dans la
+          compréhension, la qualité, les tests et la conception — jamais dans la
+          multiplication de code non maîtrisé.
+        </p>
+
+        <p>
+          <strong>
+            Ne déléguez pas votre jugement à un modèle. C'est précisément ce
+            jugement qui fait de vous un développeur.
+          </strong>
+        </p>
+
+        <hr />
+
+        <section class="meta-sections">
+          <h2>Contribution</h2>
+
+          <p>Les suggestions et les discussions sont les bienvenues.</p>
+
+          <p>
+            L'objectif n'est pas d'être anti-IA, mais de promouvoir une
+            ingénierie logicielle responsable avec l'IA.
+          </p>
+
+          <h2>Licence</h2>
+
+          <p>
+            Ce travail est mis à disposition selon les termes de la licence
+            Creative Commons Attribution 4.0 International (CC BY 4.0).
+          </p>
+
+          <p>
+            <a href="https://creativecommons.org/licenses/by/4.0/">
+              https://creativecommons.org/licenses/by/4.0/
+            </a>
+          </p>
+        </section>
+      </article>
+
+      <article class="markdown-preview" id="content-en" lang="en" hidden>
+        <h1>A Manifesto for Using AI Wisely</h1>
+
+        <p>AI is an accelerator, not a replacement for clear thinking.</p>
+
+        <p>
+          We believe developers are accountable for every line of code they
+          submit, whether they wrote it themselves or it came from an LLM.
+        </p>
+
+        <p>Before opening any pull request, your code should be:</p>
+
+        <ul>
+          <li><strong>understood</strong>: you can explain every meaningful decision;</li>
+          <li><strong>reviewed</strong>: you never assume the model is correct;</li>
+          <li><strong>tested</strong>: you validate behavior, not just green test runs;</li>
+          <li><strong>simplified</strong>: you remove anything unnecessary or overengineered.</li>
+        </ul>
+
+        <p>
+          <em>
+            Code review is not there to catch what the author did not bother to
+            verify.
+          </em>
+        </p>
+
+        <p>
+          AI gives us speed. That speed should be reinvested in understanding,
+          quality, testing, and design, never in producing more code than we
+          can truly own.
+        </p>
+
+        <p>
+          <strong>
+            Do not outsource your judgment to a model. Your judgment is exactly
+            what makes you a developer.
+          </strong>
+        </p>
+
+        <hr />
+
+        <section class="meta-sections">
+          <h2>Contributing</h2>
+
+          <p>Suggestions and discussions are welcome.</p>
+
+          <p>
+            The objective is not to be anti-AI, but to promote responsible
+            AI-assisted software engineering.
+          </p>
+
+          <h2>License</h2>
+
+          <p>
+            This work is licensed under the Creative Commons Attribution 4.0
+            International License (CC BY 4.0).
+          </p>
+
+          <p>
+            <a href="https://creativecommons.org/licenses/by/4.0/">
+              https://creativecommons.org/licenses/by/4.0/
+            </a>
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <script>
+      const toggle = document.getElementById("lang-toggle");
+      const fr = document.getElementById("content-fr");
+      const en = document.getElementById("content-en");
+
+      toggle.addEventListener("click", () => {
+        const showEnglish = en.hidden;
+        en.hidden = !showEnglish;
+        fr.hidden = showEnglish;
+        document.documentElement.lang = showEnglish ? "en" : "fr";
+        toggle.textContent = showEnglish ? "Voir en français" : "Voir en anglais";
+      });
+    </script>
+  </body>
+</html>

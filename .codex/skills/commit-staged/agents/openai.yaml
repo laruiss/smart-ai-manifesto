@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commit Staged"
+  short_description: "Commit staged Git changes consistently"
+  default_prompt: "Use $commit-staged to create a Conventional Commit from the currently staged Git changes."

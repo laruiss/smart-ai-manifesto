@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Issue"
+  short_description: "Create GitHub issues from staged changes"
+  default_prompt: "Use $create-issue to create a GitHub issue from the currently staged Git changes."

@@ -1,0 +1,43 @@
+# Règles et commandes custom pour Claude Code
+
+## Commandes disponibles
+
+### /commit-staged
+Crée un commit depuis le staging avec format Conventional Commits + gitmoji.
+
+**Usage:** Tape simplement `/commit-staged` dans le chat.
+
+**Description complète:** Voir `.github/claude-code/commit-staged.md`
+
+**Comportement:**
+1. Analyse le staging Git actuel
+2. Génère un message au format: `<type>: <gitmoji> <description>`
+3. Ajoute un corps structuré avec sections "Pourquoi" et "Changements"
+4. Exécute le commit
+5. Affiche le résumé
+
+**Exemple de résultat:**
+```
+feat: ✨ add user authentication
+
+Pourquoi
+- Sécuriser l'accès aux ressources privées
+- Permettre la personnalisation par utilisateur
+
+Changements
+- Ajout du module d'authentification JWT
+- Mise en place des middlewares de protection
+- Création des routes /login et /logout
+```
+
+## Conventions du projet
+
+### Commits
+- Toujours utiliser Conventional Commits
+- Toujours inclure un gitmoji entre le type et la description
+- Structurer le corps en 2 sections: Pourquoi / Changements
+
+### Code
+- Favoriser la lisibilité et la simplicité
+- Documenter les décisions importantes
+- Tester avant de commit

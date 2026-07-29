@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Principes - Pour une utilisation intelligente de l'IA</title>
+    <meta
+      name="description"
+      content="Principles for using AI wisely in software development."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --background: #f5f1e8;
+        --surface: rgba(255, 252, 246, 0.9);
+        --border: rgba(49, 39, 28, 0.14);
+        --text: #201c17;
+        --muted: #5c554d;
+        --shadow: 0 24px 80px rgba(49, 39, 28, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 17px;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at top, rgba(164, 140, 104, 0.1), transparent 38%),
+          linear-gradient(180deg, #f8f5ee 0%, var(--background) 100%);
+        color: var(--text);
+        font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+        line-height: 1.75;
+      }
+
+      .page {
+        width: min(100%, 52rem);
+        margin: 0 auto;
+        padding: 8vh 1.5rem;
+      }
+
+      .top-actions {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0.55rem;
+        position: sticky;
+        top: 0.75rem;
+        z-index: 20;
+        margin-bottom: 0.8rem;
+      }
+
+      .action-link,
+      #lang-toggle {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: rgba(255, 252, 246, 0.72);
+        color: var(--muted);
+        font: inherit;
+        font-size: 0.88rem;
+        line-height: 1.2;
+        padding: 0.45rem 0.75rem;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color 120ms ease, border-color 120ms ease, background-color 120ms ease;
+      }
+
+      .action-link:hover,
+      #lang-toggle:hover {
+        color: var(--text);
+        border-color: rgba(49, 39, 28, 0.26);
+        background: rgba(255, 252, 246, 0.95);
+      }
+
+      .markdown-preview {
+        padding: clamp(2rem, 4vw, 3.75rem);
+        border: 1px solid var(--border);
+        border-radius: 1.25rem;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(8px);
+      }
+
+      h1 {
+        margin: 0 0 1.4rem;
+        font-size: clamp(2rem, 4vw, 3.15rem);
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+      }
+
+      p,
+      ol {
+        margin: 1rem 0;
+      }
+
+      ol {
+        padding-left: 1.4rem;
+      }
+
+      li + li {
+        margin-top: 0.75rem;
+      }
+
+      strong {
+        font-weight: 700;
+      }
+
+      .principle-detail {
+        margin: 0.5rem 0 0.9rem;
+      }
+
+      @media (max-width: 640px) {
+        html {
+          font-size: 16px;
+        }
+
+        .page {
+          padding: 2rem 1rem;
+        }
+
+        .markdown-preview {
+          border-radius: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="top-actions">
+        <a class="action-link" href="index.html">Accueil</a>
+        <button id="lang-toggle" type="button" aria-live="polite">Voir en anglais</button>
+      </div>
+
+      <article class="markdown-preview" id="content-fr" lang="fr">
+        <h1>Principes</h1>
+
+        <ol>
+          <li>
+            Ne soumettre que du code que l'on peut <strong>défendre</strong>
+            <p class="principle-detail">Le développeur doit pouvoir expliquer les choix importants du code qu'il propose : sa logique, ses compromis, ses limites et les alternatives écartées.</p>
+            <p class="principle-detail">L'objectif n'est pas de connaître chaque détail par cœur, mais d'être capable de justifier ce qui entre dans la base de code.</p>
+          </li>
+          <li>
+            Considérer toute génération comme une <strong>proposition</strong>
+            <p class="principle-detail">Le code produit par un LLM n'est jamais une réponse validée. C'est une hypothèse de travail, au même titre qu'un exemple trouvé en ligne ou une suggestion faite par un collègue.</p>
+            <p class="principle-detail">Il doit donc être évalué, corrigé ou rejeté avant d'être adopté.</p>
+          </li>
+          <li>
+            Conserver une maîtrise <strong>proportionnelle à l'impact</strong>
+            <p class="principle-detail">Plus un changement est critique, complexe, difficile à réverser ou coûteux à maintenir, plus le niveau de compréhension et de vérification attendu doit être élevé.</p>
+            <p class="principle-detail">Toutes les lignes ne présentent pas le même risque, mais aucune ne devient fiable simplement parce qu'elle a été générée avec assurance.</p>
+          </li>
+          <li>
+            Préférer le <strong>code maîtrisé</strong> au code impressionnant
+            <p class="principle-detail">Une solution simple, comprise et adaptée vaut mieux qu'une solution sophistiquée que personne ne maîtrise vraiment.</p>
+            <p class="principle-detail">L'IA ne doit pas encourager la surenchère technique, l'abstraction prématurée ou l'introduction de concepts inutiles.</p>
+          </li>
+          <li>
+            <strong>Réduire</strong> avant d'ajouter
+            <p class="principle-detail">La facilité de génération ne doit pas conduire à produire davantage de code que nécessaire.</p>
+            <p class="principle-detail">Chaque ajout crée un coût futur : lecture, tests, maintenance, documentation, sécurité et évolution. Générer rapidement ne rend pas ce coût gratuit.</p>
+          </li>
+          <li>
+            Écrire pour le <strong>prochain lecteur</strong>
+            <p class="principle-detail">Le code ne doit pas seulement fonctionner. Il doit rendre son intention accessible à la personne qui devra le relire, le modifier ou le diagnostiquer plus tard.</p>
+            <p class="principle-detail">La lisibilité n'est pas une préférence esthétique : c'est une condition de la responsabilité collective.</p>
+          </li>
+          <li>
+            Assumer le <strong>travail de validation</strong> avant la review
+            <p class="principle-detail">Une Pull Request doit présenter un travail déjà compris, relu, testé, nettoyé et clarifié.</p>
+            <p class="principle-detail">La review sert à confronter des choix, détecter des angles morts et améliorer une proposition — pas à effectuer à la place de l'auteur le premier travail de vérification.</p>
+          </li>
+          <li>
+            Assumer la même <strong>responsabilité</strong>, quelle que soit l'origine du code
+            <p class="principle-detail">La responsabilité d'une ligne appartient à la personne qui la soumet, et non à l'outil qui l'a générée.</p>
+            <p class="principle-detail">« C'est l'IA qui l'a écrit » ne constitue ni une explication, ni une justification, ni une atténuation de responsabilité.</p>
+          </li>
+          <li>
+            Utiliser le temps gagné pour <strong>augmenter la qualité</strong>
+            <p class="principle-detail">Le bénéfice de l'IA ne devrait pas seulement être mesuré en volume produit ou en vitesse d'exécution.</p>
+            <p class="principle-detail">Le temps économisé doit permettre de mieux comprendre le problème, examiner les cas limites, améliorer les tests, simplifier la conception et documenter les décisions importantes.</p>
+          </li>
+          <li>
+            <strong>Accepter d'écarter</strong> une génération
+            <p class="principle-detail">Une suggestion difficile à comprendre, à vérifier ou à simplifier doit pouvoir être abandonnée, même si elle semble fonctionner.</p>
+            <p class="principle-detail">Le coût déjà engagé dans une conversation avec un LLM ne justifie jamais l'intégration d'un code mal maîtrisé.</p>
+          </li>
+        </ol>
+      </article>
+
+      <article class="markdown-preview" id="content-en" lang="en" hidden>
+        <h1>Principles</h1>
+
+        <ol>
+          <li>
+            Submit only code you can <strong>defend</strong>
+            <p class="principle-detail">A developer should be able to explain the important choices in the code they propose: its logic, trade-offs, limits, and rejected alternatives.</p>
+            <p class="principle-detail">The goal is not to know every detail by heart, but to be able to justify what enters the codebase.</p>
+          </li>
+          <li>
+            Treat every generation as a <strong>proposal</strong>
+            <p class="principle-detail">Code produced by an LLM is never a validated answer. It is a working hypothesis, just like an example found online or a suggestion from a teammate.</p>
+            <p class="principle-detail">It must therefore be evaluated, corrected, or rejected before adoption.</p>
+          </li>
+          <li>
+            Keep control <strong>proportional to impact</strong>
+            <p class="principle-detail">The more critical, complex, hard to reverse, or expensive to maintain a change is, the higher the expected level of understanding and verification should be.</p>
+            <p class="principle-detail">Not all lines carry the same risk, but no line becomes reliable just because it was generated confidently.</p>
+          </li>
+          <li>
+            Prefer <strong>mastered code</strong> over impressive code
+            <p class="principle-detail">A simple, well-understood, and appropriate solution is better than a sophisticated one that nobody truly masters.</p>
+            <p class="principle-detail">AI should not encourage technical one-upmanship, premature abstraction, or unnecessary concepts.</p>
+          </li>
+          <li>
+            <strong>Reduce</strong> before you add
+            <p class="principle-detail">The ease of generation should not lead to producing more code than needed.</p>
+            <p class="principle-detail">Every addition creates future cost: reading, testing, maintenance, documentation, security, and evolution. Generating quickly does not make this cost disappear.</p>
+          </li>
+          <li>
+            Write for the <strong>next reader</strong>
+            <p class="principle-detail">Code should not only work. Its intent should be accessible to the person who will review, modify, or diagnose it later.</p>
+            <p class="principle-detail">Readability is not an aesthetic preference: it is a condition for collective accountability.</p>
+          </li>
+          <li>
+            Take ownership of the <strong>validation work</strong> before review
+            <p class="principle-detail">A pull request should present work that is already understood, reviewed, tested, cleaned up, and clarified.</p>
+            <p class="principle-detail">Review is there to challenge choices, detect blind spots, and improve a proposal, not to perform the author's first round of verification.</p>
+          </li>
+          <li>
+            Take on the same <strong>accountability</strong>, whatever the code origin
+            <p class="principle-detail">Accountability for a line belongs to the person who submits it, not to the tool that generated it.</p>
+            <p class="principle-detail">"The AI wrote it" is neither an explanation, nor a justification, nor a mitigation of accountability.</p>
+          </li>
+          <li>
+            Use the time saved to <strong>raise quality</strong>
+            <p class="principle-detail">The benefit of AI should not be measured only in output volume or execution speed.</p>
+            <p class="principle-detail">Time saved should help us better understand the problem, examine edge cases, improve tests, simplify design, and document important decisions.</p>
+          </li>
+          <li>
+            <strong>Be willing to discard</strong> a generation
+            <p class="principle-detail">A suggestion that is hard to understand, verify, or simplify should be abandoned, even if it appears to work.</p>
+            <p class="principle-detail">The cost already invested in a conversation with an LLM never justifies integrating poorly mastered code.</p>
+          </li>
+        </ol>
+      </article>
+    </main>
+
+    <script>
+      const toggle = document.getElementById("lang-toggle");
+      const fr = document.getElementById("content-fr");
+      const en = document.getElementById("content-en");
+
+      toggle.addEventListener("click", () => {
+        const showEnglish = en.hidden;
+        en.hidden = !showEnglish;
+        fr.hidden = showEnglish;
+        document.documentElement.lang = showEnglish ? "en" : "fr";
+        toggle.textContent = showEnglish ? "Voir en français" : "Voir en anglais";
+        document.querySelector(".action-link").textContent = showEnglish ? "Home" : "Accueil";
+      });
+    </script>
+  </body>
+</html>

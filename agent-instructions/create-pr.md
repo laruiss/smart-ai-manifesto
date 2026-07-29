@@ -20,14 +20,14 @@ Expected behavior:
 4. Compare the current branch against the base branch.
 5. Read the commits that are present on the current branch and absent from the base branch.
 6. Draft a clear pull request title and body in English.
-7. Ensure the current branch is linked to the extracted issue in GitHub's Development section before creating the PR.
-8. Include a closing reference for the issue at the end of the PR body:
+7. Include a closing reference for the issue at the end of the PR body so the newly created PR links to the matching issue:
 
 ```text
 #closes <issue ID>
 ```
 
-9. Create the pull request with `gh pr create`.
+8. Create the pull request with `gh pr create`.
+9. Link the newly created PR to the issue in GitHub's Development section.
 10. Show a summary with the PR URL, title, base branch, current branch, issue ID, and whether the Development link was verified.
 
 Required title format:
@@ -65,7 +65,8 @@ Rules:
 - Do not create a PR if there are no commits on the current branch compared to the base branch.
 - Do not invent verification steps. If no tests or checks were run, write `Not run`.
 - Keep the title concise and specific.
-- Link the branch to the issue through GitHub's supported Development workflow before creating the PR.
+- Link the newly created PR to the issue through the closing reference in the PR body.
+- Do not try to link the branch to the issue before creating the PR.
 - Do not invent or call unsupported REST or GraphQL endpoints for directly linking an existing PR to an issue.
 - Use `gh pr create` to create the pull request.
 - Do not commit, push, edit files, stage files, or unstage files as part of this workflow.
@@ -91,27 +92,13 @@ git log --oneline <base branch>..HEAD
 git show --stat --summary <commit>
 ```
 
-- Check whether the current branch is already linked to the issue:
-
-```text
-gh issue develop --list <issue ID>
-```
-
-- If the current branch is not listed, link it to the issue before creating the PR by using GitHub's supported Development workflow:
-
-```text
-gh issue develop <issue ID> --name <current branch> --base <base branch>
-```
-
-- If `gh issue develop` cannot link the branch because it already exists or the operation is unsupported, do not fabricate an API call. Continue only if the branch is already linked, otherwise report that the PR must be manually linked in GitHub's Development sidebar.
-
 - Create the pull request with:
 
 ```text
 gh pr create --base <base branch> --head <current branch> --title "<title>" --body "<body>"
 ```
 
-- After creating the PR, verify the issue's Development linkage again:
+- After creating the PR, verify the issue's Development linkage:
 
 ```text
 gh issue develop --list <issue ID>

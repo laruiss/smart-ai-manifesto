@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charte - Pour une utilisation intelligente de l'IA</title>
+    <meta
+      name="description"
+      content="Charter for using AI wisely in software development."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --background: #f5f1e8;
+        --surface: rgba(255, 252, 246, 0.9);
+        --border: rgba(49, 39, 28, 0.14);
+        --text: #201c17;
+        --muted: #5c554d;
+        --shadow: 0 24px 80px rgba(49, 39, 28, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        font-size: 17px;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at top, rgba(164, 140, 104, 0.1), transparent 38%),
+          linear-gradient(180deg, #f8f5ee 0%, var(--background) 100%);
+        color: var(--text);
+        font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+        line-height: 1.75;
+      }
+
+      .page {
+        width: min(100%, 52rem);
+        margin: 0 auto;
+        padding: 8vh 1.5rem;
+      }
+
+      .top-actions {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 0.55rem;
+        position: sticky;
+        top: 0.75rem;
+        z-index: 20;
+        margin-bottom: 0.8rem;
+      }
+
+      .action-link,
+      #lang-toggle {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: rgba(255, 252, 246, 0.72);
+        color: var(--muted);
+        font: inherit;
+        font-size: 0.88rem;
+        line-height: 1.2;
+        padding: 0.45rem 0.75rem;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color 120ms ease, border-color 120ms ease, background-color 120ms ease;
+      }
+
+      .action-link:hover,
+      #lang-toggle:hover {
+        color: var(--text);
+        border-color: rgba(49, 39, 28, 0.26);
+        background: rgba(255, 252, 246, 0.95);
+      }
+
+      .markdown-preview {
+        padding: clamp(2rem, 4vw, 3.75rem);
+        border: 1px solid var(--border);
+        border-radius: 1.25rem;
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(8px);
+      }
+
+      h1 {
+        margin: 0 0 1.4rem;
+        font-size: clamp(2rem, 4vw, 3.15rem);
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+      }
+
+      p,
+      ul {
+        margin: 1rem 0;
+      }
+
+      ul {
+        padding-left: 1.4rem;
+      }
+
+      li + li {
+        margin-top: 0.75rem;
+      }
+
+      strong {
+        font-weight: 700;
+      }
+
+      em {
+        color: var(--muted);
+      }
+
+      @media (max-width: 640px) {
+        html {
+          font-size: 16px;
+        }
+
+        .page {
+          padding: 2rem 1rem;
+        }
+
+        .markdown-preview {
+          border-radius: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <div class="top-actions">
+        <a class="action-link" href="index.html">Accueil</a>
+        <button id="lang-toggle" type="button" aria-live="polite">Voir en anglais</button>
+      </div>
+
+      <article class="markdown-preview" id="content-fr" lang="fr">
+        <h1>Charte</h1>
+
+        <p>L'IA est un accélérateur, pas un remplaçant de la réflexion.</p>
+
+        <p>Nous considérons qu'un développeur est responsable de chaque ligne de code qu'il soumet, qu'elle ait été écrite par lui ou générée par un LLM.</p>
+
+        <p>Avant toute soumission, un code doit être :</p>
+
+        <ul>
+          <li><strong>relu</strong> : vous ne supposez jamais que le modèle a raison ;</li>
+          <li><strong>compris</strong> : vous êtes capable d'expliquer chaque partie du code produit ;</li>
+          <li><strong>testé</strong> : vous vérifiez que le comportement est correct, pas seulement que les tests passent ;</li>
+          <li><strong>Nettoyé</strong> : vous supprimez tout ce qui est inutile ou surconçu ;</li>
+          <li><strong>Clarifié</strong> : vous veillez à ce que le code puisse être lu, compris et maintenu facilement par des humains.</li>
+        </ul>
+
+        <p><em>Une review de code n'a pas pour vocation de découvrir ce que l'auteur n'a pas pris le temps de vérifier.</em></p>
+
+        <p>L'IA nous fait gagner du temps. Ce temps doit être réinvesti dans la compréhension, la qualité, les tests et la conception — jamais dans la multiplication de code non maîtrisé.</p>
+
+        <p><strong>Ne déléguez pas votre jugement à un modèle. C'est précisément ce jugement qui fait de vous un développeur.</strong></p>
+      </article>
+
+      <article class="markdown-preview" id="content-en" lang="en" hidden>
+        <h1>Charter</h1>
+
+        <p>AI is an accelerator, not a replacement for clear thinking.</p>
+
+        <p>We consider developers accountable for every line of code they submit, whether written by them or generated by an LLM.</p>
+
+        <p>Before any submission, code should be:</p>
+
+        <ul>
+          <li><strong>reviewed</strong>: you never assume the model is correct;</li>
+          <li><strong>understood</strong>: you can explain every part of the produced code;</li>
+          <li><strong>tested</strong>: you verify that behavior is correct, not just that tests pass;</li>
+          <li><strong>cleaned</strong>: you remove anything unnecessary or overengineered;</li>
+          <li><strong>clarified</strong>: you ensure the code can be read, understood, and maintained easily by humans.</li>
+        </ul>
+
+        <p><em>Code review is not there to discover what the author did not take the time to verify.</em></p>
+
+        <p>AI gives us speed. That speed should be reinvested in understanding, quality, testing, and design, never in multiplying code we do not fully control.</p>
+
+        <p><strong>Do not outsource your judgment to a model. That judgment is exactly what makes you a developer.</strong></p>
+      </article>
+    </main>
+
+    <script>
+      const toggle = document.getElementById("lang-toggle");
+      const fr = document.getElementById("content-fr");
+      const en = document.getElementById("content-en");
+
+      toggle.addEventListener("click", () => {
+        const showEnglish = en.hidden;
+        en.hidden = !showEnglish;
+        fr.hidden = showEnglish;
+        document.documentElement.lang = showEnglish ? "en" : "fr";
+        toggle.textContent = showEnglish ? "Voir en français" : "Voir en anglais";
+        document.querySelector(".action-link").textContent = showEnglish ? "Home" : "Accueil";
+      });
+    </script>
+  </body>
+</html>

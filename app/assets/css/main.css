@@ -1,0 +1,202 @@
+:root {
+  color-scheme: light;
+  --background: #f3efe6;
+  --surface: rgba(255, 252, 246, 0.92);
+  --border: rgba(49, 39, 28, 0.14);
+  --text: #201c17;
+  --muted: #5c554d;
+  --accent: #1f6f64;
+  --shadow: 0 24px 80px rgba(49, 39, 28, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 17px;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(31, 111, 100, 0.08), transparent 34%),
+    linear-gradient(180deg, #faf7f0 0%, var(--background) 100%);
+  color: var(--text);
+  font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  line-height: 1.75;
+}
+
+a {
+  color: var(--accent);
+  text-underline-offset: 0.16em;
+}
+
+.page {
+  width: min(100%, 52rem);
+  margin: 0 auto;
+  padding: 8vh 1.5rem;
+}
+
+.top-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.55rem;
+  position: sticky;
+  top: 0.75rem;
+  z-index: 20;
+  margin-bottom: 0.8rem;
+}
+
+.section-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-right: auto;
+  padding: 0.22rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 252, 246, 0.72);
+}
+
+.section-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.65rem;
+  padding: 0.18rem 0.62rem;
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 120ms ease, background-color 120ms ease;
+}
+
+.section-nav a:hover,
+.section-nav a.active {
+  background: rgba(31, 111, 100, 0.1);
+  color: var(--text);
+}
+
+.github-link {
+  width: 2.1rem;
+  height: 2.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 252, 246, 0.72);
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 120ms ease, border-color 120ms ease, background-color 120ms ease;
+}
+
+.github-link:hover {
+  color: var(--text);
+  border-color: rgba(49, 39, 28, 0.26);
+  background: rgba(255, 252, 246, 0.95);
+}
+
+.github-link svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+#lang-toggle {
+  border: 1px solid var(--border);
+  background: rgba(255, 252, 246, 0.72);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.88rem;
+  line-height: 1.2;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 120ms ease, border-color 120ms ease, background-color 120ms ease;
+}
+
+#lang-toggle:hover {
+  color: var(--text);
+  border-color: rgba(49, 39, 28, 0.26);
+  background: rgba(255, 252, 246, 0.95);
+}
+
+.markdown-preview {
+  padding: clamp(2rem, 4vw, 3.75rem);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(8px);
+}
+
+.markdown-preview h1 {
+  margin: 0 0 1.4rem;
+  font-size: clamp(2rem, 4vw, 3.15rem);
+  line-height: 1.1;
+}
+
+.markdown-preview h2 {
+  margin: 2.25rem 0 0.75rem;
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.markdown-preview p,
+.markdown-preview ul,
+.markdown-preview ol {
+  margin: 1rem 0;
+}
+
+.markdown-preview ul,
+.markdown-preview ol {
+  padding-left: 1.4rem;
+}
+
+.markdown-preview li + li {
+  margin-top: 0.75rem;
+}
+
+.markdown-preview strong {
+  font-weight: 700;
+}
+
+.markdown-preview em {
+  color: var(--muted);
+}
+
+.markdown-preview hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+@media (max-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+
+  .page {
+    padding: 2rem 1rem;
+  }
+
+  .top-actions {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .section-nav {
+    order: 2;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .markdown-preview {
+    border-radius: 1rem;
+  }
+}

@@ -23,7 +23,7 @@ Expected behavior:
 7. Include a closing reference for the issue at the end of the PR body so the newly created PR links to the matching issue:
 
 ```text
-#closes <issue ID>
+closes #<issue ID>
 ```
 
 8. Create the pull request with `gh pr create`.
@@ -54,7 +54,7 @@ Required body structure:
 - <verification item 1>
 - <verification item 2>
 
-#closes <issue ID>
+closes #<issue ID>
 ```
 
 Rules:

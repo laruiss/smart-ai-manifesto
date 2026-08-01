@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   compatibilityDate: '2026-07-29',
-  modules: ['@nuxt/content'],
+  modules: ['@nuxt/content', 'convex-nuxt'],
   nitro: {
     prerender: {
       routes: ['/', '/principes', '/charte', '/en', '/en/principles', '/en/charter']

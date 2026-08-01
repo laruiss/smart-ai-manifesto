@@ -1,6 +1,26 @@
+const clerkPublishableKey =
+  process.env.NUXT_PUBLIC_CLERK_PUBLISHABLE_KEY ||
+  process.env.VITE_CLERK_PUBLISHABLE_KEY
+
+const convexUrl =
+  process.env.NUXT_PUBLIC_CONVEX_URL ||
+  process.env.CONVEX_URL ||
+  process.env.VITE_CONVEX_URL
+
 export default defineNuxtConfig({
   compatibilityDate: '2026-07-29',
-  modules: ['@nuxt/content', 'convex-nuxt'],
+  modules: [
+    '@nuxt/content',
+    ...(clerkPublishableKey ? ['@clerk/nuxt'] : [])
+  ],
+  runtimeConfig: {
+    public: {
+      convex: convexUrl ? { url: convexUrl } : {}
+    }
+  },
+  clerk: {
+    publishableKey: clerkPublishableKey
+  },
   nitro: {
     prerender: {
       routes: ['/', '/principes', '/charte', '/en', '/en/principles', '/en/charter']

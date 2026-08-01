@@ -20,6 +20,26 @@ Nous découvrons une nouvelle manière de développer des logiciels grâce aux m
 
 Autrement dit, nous reconnaissons de la valeur dans les éléments de droite, mais privilégions ceux de gauche.
 
+## Charte
+
+L'IA est un accélérateur, pas un remplaçant de la réflexion.
+
+Nous considérons qu'un développeur est responsable de chaque ligne de code qu'il soumet, qu'elle ait été écrite par lui ou générée par un LLM.
+
+Avant toute soumission, un code doit être :
+
+- **relu** : vous ne supposez jamais que le modèle a raison ;
+- **compris** : vous êtes capable d'expliquer chaque partie du code produit ;
+- **testé** : vous vérifiez que le comportement est correct, pas seulement que les tests passent ;
+- **Nettoyé** : vous supprimez tout ce qui est inutile ou surconçu ;
+- **Clarifié** : vous veillez à ce que le code puisse être lu, compris et maintenu facilement par des humains.
+
+*Une review de code n'a pas pour vocation de découvrir ce que l'auteur n'a pas pris le temps de vérifier.*
+
+L'IA nous fait gagner du temps. Ce temps doit être réinvesti dans la compréhension, la qualité, les tests et la conception — jamais dans la multiplication de code non maîtrisé.
+
+**Ne déléguez pas votre jugement à un modèle. C'est précisément ce jugement qui fait de vous un développeur.**
+
 ## Principes
 
 1. Ne soumettre que du code que l’on peut **défendre**
@@ -81,26 +101,6 @@ Autrement dit, nous reconnaissons de la valeur dans les éléments de droite, ma
     Une suggestion difficile à comprendre, à vérifier ou à simplifier doit pouvoir être abandonnée, même si elle semble fonctionner.
 
     Le coût déjà engagé dans une conversation avec un LLM ne justifie jamais l’intégration d’un code mal maîtrisé.
-
-## Charte
-
-L'IA est un accélérateur, pas un remplaçant de la réflexion.
-
-Nous considérons qu'un développeur est responsable de chaque ligne de code qu'il soumet, qu'elle ait été écrite par lui ou générée par un LLM.
-
-Avant toute soumission, un code doit être :
-
-- **relu** : vous ne supposez jamais que le modèle a raison ;
-- **compris** : vous êtes capable d'expliquer chaque partie du code produit ;
-- **testé** : vous vérifiez que le comportement est correct, pas seulement que les tests passent ;
-- **Nettoyé** : vous supprimez tout ce qui est inutile ou surconçu ;
-- **Clarifié** : vous veillez à ce que le code puisse être lu, compris et maintenu facilement par des humains.
-
-*Une review de code n'a pas pour vocation de découvrir ce que l'auteur n'a pas pris le temps de vérifier.*
-
-L'IA nous fait gagner du temps. Ce temps doit être réinvesti dans la compréhension, la qualité, les tests et la conception — jamais dans la multiplication de code non maîtrisé.
-
-**Ne déléguez pas votre jugement à un modèle. C'est précisément ce jugement qui fait de vous un développeur.**
 
 ## Contribution
 

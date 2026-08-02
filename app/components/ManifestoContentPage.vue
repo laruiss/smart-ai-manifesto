@@ -21,7 +21,7 @@ const sectionConfig: Record<
     labels: { fr: 'Principes', en: 'Principles' }
   },
   charter: {
-    paths: { fr: '/charte', en: '/en/charter' },
+    paths: { fr: '/#charte', en: '/en#charter' },
     labels: { fr: 'Charte', en: 'Charter' }
   }
 }
@@ -48,6 +48,7 @@ const activeLanguage = computed<Language>(() => {
   return 'fr'
 })
 const documentPath = computed(() => `/${activeLanguage.value}/${activeSection.value}`)
+const charterDocumentPath = computed(() => `/${activeLanguage.value}/charter`)
 
 const { data: page } = await useAsyncData(
   () => `content-${documentPath.value}`,
@@ -57,10 +58,25 @@ const { data: page } = await useAsyncData(
   }
 )
 
+const { data: charterPage } = await useAsyncData(
+  () => `content-${charterDocumentPath.value}`,
+  () => queryCollection('content').path(charterDocumentPath.value).first(),
+  {
+    watch: [charterDocumentPath]
+  }
+)
+
 const alternateLanguage = computed<Language>(() => (activeLanguage.value === 'fr' ? 'en' : 'fr'))
 const toggleLabel = computed(() =>
   activeLanguage.value === 'fr' ? 'Voir en anglais' : 'Voir en français'
 )
+const activeNavigationSection = computed<Section>(() => {
+  if (route.hash === '#charte' || route.hash === '#charter') {
+    return 'charter'
+  }
+
+  return activeSection.value
+})
 const navigationItems = computed(() =>
   (Object.entries(sectionConfig) as Array<[Section, (typeof sectionConfig)[Section]]>).map(
     ([section, config]) => ({
@@ -84,6 +100,11 @@ const ui = computed(() =>
         notFound: 'Document not found.'
       }
 )
+
+const isCharterPage = computed(() => activeSection.value === 'charter')
+const isManifestoPage = computed(() => activeSection.value === 'manifesto')
+const showsCharterSignaturePanel = computed(() => isManifestoPage.value || isCharterPage.value)
+const charterArticleId = computed(() => (activeLanguage.value === 'fr' ? 'charte' : 'charter'))
 
 const toggleLanguage = () => {
   const language = alternateLanguage.value
@@ -121,7 +142,7 @@ useSeoMeta(() => ({
           v-for="item in navigationItems"
           :key="item.section"
           :to="item.href"
-          :class="{ active: item.section === activeSection }"
+          :class="{ active: item.section === activeNavigationSection }"
         >
           {{ item.label }}
         </NuxtLink>
@@ -152,5 +173,20 @@ useSeoMeta(() => ({
       <ContentRenderer v-if="page" :value="page" />
       <p v-else>{{ ui.notFound }}</p>
     </article>
+
+    <article
+      v-if="isManifestoPage"
+      :id="charterArticleId"
+      class="markdown-preview"
+      :lang="activeLanguage"
+    >
+      <ContentRenderer v-if="charterPage" :value="charterPage" />
+      <p v-else>{{ ui.notFound }}</p>
+    </article>
+
+    <CharterSignaturePanel
+      v-if="showsCharterSignaturePanel"
+      :language="activeLanguage"
+    />
   </main>
 </template>

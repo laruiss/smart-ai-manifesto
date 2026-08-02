@@ -135,6 +135,10 @@ a {
   backdrop-filter: blur(8px);
 }
 
+.markdown-preview + .markdown-preview {
+  margin-top: 1rem;
+}
+
 .markdown-preview h1 {
   margin: 0 0 1.4rem;
   font-size: clamp(2rem, 4vw, 3.15rem);
@@ -176,6 +180,132 @@ a {
   border-top: 1px solid var(--border);
 }
 
+.markdown-preview ul:has(.manifesto-author) {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.markdown-preview ul:has(.manifesto-author) li {
+  margin: 0;
+  min-width: 0;
+}
+
+.markdown-preview .manifesto-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+  min-height: 4.4rem;
+  padding: 0.85rem 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: rgba(255, 252, 246, 0.64);
+  color: var(--text);
+  line-height: 1.25;
+  text-decoration: none;
+  transition: border-color 120ms ease, background-color 120ms ease, transform 120ms ease;
+}
+
+.markdown-preview .manifesto-author:hover {
+  border-color: rgba(31, 111, 100, 0.34);
+  background: rgba(255, 252, 246, 0.94);
+  transform: translateY(-1px) scale(1.05);
+}
+
+.markdown-preview .github-author-icon {
+  flex: 0 0 auto;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+}
+
+.markdown-preview .manifesto-author br {
+  display: block;
+}
+
+.markdown-preview .manifesto-author strong {
+  display: inline-block;
+  margin-bottom: 0.12rem;
+}
+
+.signature-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.25rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1.15rem 1.25rem;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: rgba(255, 252, 246, 0.72);
+}
+
+.signature-panel h2 {
+  margin: 0 0 0.25rem;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.signature-panel p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.signature-count {
+  margin-top: 0.35rem !important;
+  color: var(--text) !important;
+  font-weight: 700;
+}
+
+.signature-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.signature-button {
+  min-height: 2.3rem;
+  border: 1px solid rgba(31, 111, 100, 0.35);
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.88rem;
+  line-height: 1.2;
+  padding: 0.52rem 0.9rem;
+  transition: background-color 120ms ease, opacity 120ms ease;
+}
+
+.signature-button:hover {
+  background: #185a52;
+}
+
+.signature-button:disabled {
+  cursor: wait;
+  opacity: 0.62;
+}
+
+.signature-signed,
+.signature-muted {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.signature-error {
+  flex-basis: 100%;
+  color: #8f2f2f !important;
+  text-align: right;
+}
+
 @media (max-width: 640px) {
   html {
     font-size: 16px;
@@ -198,5 +328,21 @@ a {
 
   .markdown-preview {
     border-radius: 1rem;
+  }
+
+  .markdown-preview ul:has(.manifesto-author) {
+    grid-template-columns: 1fr;
+  }
+
+  .signature-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .signature-actions {
+    justify-content: flex-start;
+  }
+
+  .signature-error {
+    text-align: left;
   }
 }

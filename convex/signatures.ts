@@ -44,8 +44,11 @@ export const count = query({
   args: {},
   returns: v.number(),
   handler: async (ctx) => {
-    const signatures = await ctx.db.query('signatures').collect()
-    return signatures.length
+    const counter = await ctx.db
+      .query('counters')
+      .withIndex('by_key', (q) => q.eq('key', 'signatures'))
+      .unique()
+    return counter?.value ?? 0
   },
 })
 
@@ -91,6 +94,16 @@ export const signCharter = mutation({
       charterVersion: args.charterVersion,
       signedAt,
     })
+
+    const counter = await ctx.db
+      .query('counters')
+      .withIndex('by_key', (q) => q.eq('key', 'signatures'))
+      .unique()
+    if (counter) {
+      await ctx.db.patch(counter._id, { value: counter.value + 1 })
+    } else {
+      await ctx.db.insert('counters', { key: 'signatures', value: 1 })
+    }
 
     return {
       alreadySigned: false,

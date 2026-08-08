@@ -31,7 +31,7 @@ const ui = computed(() =>
         signIn: 'Se connecter pour signer',
         signCount: 'signature | signatures',
         authLoading: 'Chargement...',
-        authUnavailable: 'Signature indisponible: Clerk n’est pas configure.'
+        authUnavailable: 'Signature indisponible: Clerk n’est pas configuré.'
       }
     : {
         signTitle: 'Sign the charter',

@@ -6,8 +6,8 @@
     "build": "nuxt build",
     "dev:convex": "npx convex dev",
     "dev:nuxt": "nuxt dev",
-    "dev": "npx convex dev --start 'npm run dev:nuxt'",
-    "deploy:netlify": "npx convex deploy --cmd 'npm run generate'",
+    "dev": "npx convex dev --start \"npm run dev:nuxt\"",
+    "deploy:netlify": "npx convex deploy --cmd \"npm run generate\"",
     "generate": "nuxt generate --preset netlify",
     "preview": "nuxt preview"
   },

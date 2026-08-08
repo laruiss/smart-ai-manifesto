@@ -2,6 +2,10 @@ import { defineSchema, defineTable } from 'convex/server'
 import { v } from 'convex/values'
 
 export default defineSchema({
+  counters: defineTable({
+    key: v.string(),
+    value: v.number(),
+  }).index('by_key', ['key']),
   signatures: defineTable({
     tokenIdentifier: v.string(),
     clerkSubject: v.string(),
